@@ -2,6 +2,10 @@
 
 Firefly is a modern game engine in python.
 
+[![CI](https://github.com/ambye85/firefly/workflows/CI/badge.svg?branch=master)]()
+[![codecov](https://codecov.io/gh/ambye85/firefly/branch/master/graph/badge.svg)](https://codecov.io/gh/ambye85/firefly)
+[![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 ## Development - getting started
 
 Clone the repo, then install all necessary dependencies:
@@ -43,7 +47,7 @@ coverage report
 ```
 
 We configure coverage to run in parallel in [pyproject.toml](pyproject.toml), so we need to combine reports prior to viewing the results.
-Coverage reports should not be committed but will be generated during CI and uploaded to [codecov]().
+Coverage reports should not be committed but will be generated during CI and uploaded to [codecov](https://codecov.io/gh/ambye85/firefly).
 
 ### Typing
 
