@@ -1,0 +1,31 @@
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | _build
+  | build
+  | dist
+  | venv
+)/
+'''
+
+[tool.coverage.run]
+parallel = true
+branch = true
+source = ["firefly"]
+
+[tool.coverage.paths]
+source = ["src"]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra"
+testpaths = [
+    "tests",
+]
