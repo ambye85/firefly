@@ -47,18 +47,18 @@
 <span>class <span class="ident">Application</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Application should be inherited by clients.</p></div>
+<div class="desc"><p>Application should be subclassed by clients.</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>abc.ABC</li>
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="firefly.application.Application.on_update"><code class="name flex">
-<span>def <span class="ident">on_update</span></span>(<span>self)</span>
+<dt id="firefly.application.Application.append_layer"><code class="name flex">
+<span>def <span class="ident">append_layer</span></span>(<span>self, layer)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Append a <code><a title="firefly.application.Layer" href="#firefly.application.Layer">Layer</a></code> to the application.</p></div>
 </dd>
 <dt id="firefly.application.Application.run"><code class="name flex">
 <span>def <span class="ident">run</span></span>(<span>self)</span>
@@ -71,6 +71,62 @@
 </code></dt>
 <dd>
 <div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="firefly.application.Layer"><code class="flex name class">
+<span>class <span class="ident">Layer</span></span>
+<span>(</span><span>debug_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Layer's provide independent units of functionality.
+As a minimum, you should have one layer which provides your main
+<code><a title="firefly.application.Application" href="#firefly.application.Application">Application</a></code> logic. Override the relevant methods to define behaviour
+specific to your application.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>abc.ABC</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="firefly.application.Layer.on_attach"><code class="name flex">
+<span>def <span class="ident">on_attach</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>On attach is called when a Layer is attached to a <code><a title="firefly.application.LayerSystem" href="#firefly.application.LayerSystem">LayerSystem</a></code>.</p></div>
+</dd>
+<dt id="firefly.application.Layer.on_detach"><code class="name flex">
+<span>def <span class="ident">on_detach</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>On detach is called when a Layer is removed from a <code><a title="firefly.application.LayerSystem" href="#firefly.application.LayerSystem">LayerSystem</a></code>.</p></div>
+</dd>
+<dt id="firefly.application.Layer.on_update"><code class="name flex">
+<span>def <span class="ident">on_update</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>On update is called by the <code><a title="firefly.application.Application" href="#firefly.application.Application">Application</a></code> to update the Layer.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="firefly.application.LayerSystem"><code class="flex name class">
+<span>class <span class="ident">LayerSystem</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>LayerSystem is a data structure for managing <code><a title="firefly.application.Layer" href="#firefly.application.Layer">Layer</a></code>s.</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="firefly.application.LayerSystem.append"><code class="name flex">
+<span>def <span class="ident">append</span></span>(<span>self, layer)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Append a <code><a title="firefly.application.Layer" href="#firefly.application.Layer">Layer</a></code>.</p></div>
+</dd>
+<dt id="firefly.application.LayerSystem.remove"><code class="name flex">
+<span>def <span class="ident">remove</span></span>(<span>self, layer)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove a <code><a title="firefly.application.Layer" href="#firefly.application.Layer">Layer</a></code>.</p></div>
 </dd>
 </dl>
 </dd>
@@ -98,9 +154,24 @@
 <li>
 <h4><code><a title="firefly.application.Application" href="#firefly.application.Application">Application</a></code></h4>
 <ul class="">
-<li><code><a title="firefly.application.Application.on_update" href="#firefly.application.Application.on_update">on_update</a></code></li>
+<li><code><a title="firefly.application.Application.append_layer" href="#firefly.application.Application.append_layer">append_layer</a></code></li>
 <li><code><a title="firefly.application.Application.run" href="#firefly.application.Application.run">run</a></code></li>
 <li><code><a title="firefly.application.Application.should_close" href="#firefly.application.Application.should_close">should_close</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="firefly.application.Layer" href="#firefly.application.Layer">Layer</a></code></h4>
+<ul class="">
+<li><code><a title="firefly.application.Layer.on_attach" href="#firefly.application.Layer.on_attach">on_attach</a></code></li>
+<li><code><a title="firefly.application.Layer.on_detach" href="#firefly.application.Layer.on_detach">on_detach</a></code></li>
+<li><code><a title="firefly.application.Layer.on_update" href="#firefly.application.Layer.on_update">on_update</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="firefly.application.LayerSystem" href="#firefly.application.LayerSystem">LayerSystem</a></code></h4>
+<ul class="">
+<li><code><a title="firefly.application.LayerSystem.append" href="#firefly.application.LayerSystem.append">append</a></code></li>
+<li><code><a title="firefly.application.LayerSystem.remove" href="#firefly.application.LayerSystem.remove">remove</a></code></li>
 </ul>
 </li>
 </ul>
