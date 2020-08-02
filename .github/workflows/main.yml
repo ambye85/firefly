@@ -34,10 +34,10 @@ jobs:
       - name: "Linting"
         run: |
           python -m black .
-          python -m flake8 src tests
+          python -m flake8 examples src tests
 
       - name: "Typing"
-        run: "python -m mypy src tests"
+        run: "python -m mypy examples src tests"
 
       - name: "Run pytest for ${{ matrix.python-version }}"
         run: "python -m pytest"

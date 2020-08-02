@@ -35,7 +35,7 @@ python -m flake8 src tests
 Firefly's test suite can be run using the following command:
 
 ```shell script
-python -m pytest
+python -m pytest -v
 ```
 
 Test coverage reports can be generated for the project:

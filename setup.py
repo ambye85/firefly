@@ -27,7 +27,7 @@ CLASSIFIERS = [
     "Programming Language :: Python :: Implementation :: CPython",
     "Topic :: Games/Entertainment",
 ]
-INSTALL_REQUIRES = []
+INSTALL_REQUIRES = ["glfw==1.12.0"]
 EXTRAS_REQUIRE = {
     "tests": ["pytest>=6.0.0"],
 }
