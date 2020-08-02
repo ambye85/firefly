@@ -1,3 +1,5 @@
+from . import application as application
+
 __version__: str
 __title__: str
 __description__: str

@@ -1,3 +1,5 @@
+from . import application
+
 __version__ = "2020.8.0.dev0"
 
 __title__ = "firefly"
@@ -12,9 +14,6 @@ __email__ = "ambye85@example.com"
 __license__ = "MIT"
 __copyright__ = "Copyright (c) 2020 Ashley Morton-Bye"
 
-from .firefly import greet
-
 __all__ = [
-    "greet",
+    "application",
 ]
-
