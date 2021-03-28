@@ -11,7 +11,7 @@ Firefly is a modern game engine in python.
 Clone the repo, then install all necessary dependencies:
 
 ```shell script
-pip install -r requirements-dev.txt
+poetry install
 ```
 
 We use various linting, typing and testing tools to help maintain a high quality codebase.
@@ -26,8 +26,8 @@ We use [black](https://github.com/psf/black) to provide a consistent formatting 
 Linting is executed by the following commands:
 
 ```shell script
-python -m black .
-python -m flake8 src tests
+poetry run black .
+poetry run flake8 src tests
 ```
 
 ### Testing
@@ -35,15 +35,15 @@ python -m flake8 src tests
 Firefly's test suite can be run using the following command:
 
 ```shell script
-python -m pytest -v
+poetry run pytest -v
 ```
 
 Test coverage reports can be generated for the project:
 
 ```shell script
-coverage run -m pytest
-coverage combine
-coverage report
+poetry run coverage run -m pytest
+poetry run coverage combine
+poetry run coverage report
 ```
 
 We configure coverage to run in parallel in [pyproject.toml](pyproject.toml), so we need to combine reports prior to viewing the results.
@@ -56,7 +56,7 @@ We use [mypy](https://github.com/python/mypy) to perform static analysis of Fire
 Static analysis is run with the following command:
 
 ```shell script
-python -m mypy src tests
+poetry run mypy src tests
 ```
 
 ## Documentation

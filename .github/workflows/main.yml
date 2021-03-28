@@ -12,11 +12,11 @@ jobs:
     name: "Python ${{ matrix.python-version }}"
     runs-on: "ubuntu-latest"
     env:
-      USING_COVERAGE: '3.8'
+      USING_COVERAGE: '3.9'
 
     strategy:
       matrix:
-        python-version: ["3.8"]
+        python-version: ["3.9"]
 
     steps:
       - uses: "actions/checkout@v2"
@@ -29,7 +29,9 @@ jobs:
           python -VV
           python -m site
           python -m pip install --upgrade pip
-          pip install -r requirements-dev.txt
+          pip install poetry
+          poetry config virtualenvs.create false
+          poetry install
 
       - name: "Linting"
         run: |
