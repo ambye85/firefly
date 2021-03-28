@@ -66,7 +66,7 @@ Firefly's public API is [documented](https://ambye85.github.io/firefly/index.htm
 To build documentation, run:
 
 ```shell script
-pdoc --html --config show_source_code=False --output-dir docs firefly
+poetry run pdoc --html --config show_source_code=False --output-dir docs firefly
 mv docs/firefly/* docs
 rmdir docs/firefly
 ```
